@@ -1,0 +1,15 @@
+{
+  "name": "ccherukuri-ssh",
+  "version": "0.1.0",
+  "author": "ccherukuri",
+  "summary": "to connect to remote servers and manged the ssh module using puppet",
+  "license": "Apache-2.0",
+  "source": "https://github.com/chaitanya811/puppetlabs.git",
+  "project_page": "https://github.com/chaitanya811/puppetlabs.git",
+  "issues_url": "https://github.com/chaitanya811/puppetlabs/issues/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
