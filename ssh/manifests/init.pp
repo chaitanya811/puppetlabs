@@ -43,10 +43,18 @@
 # Copyright 2018 Your name here, unless otherwise noted.
 #
 class ssh( 
- $package_name = $::ssh::params::package_name,
- $service_name = $::ssh::params::service_name,
-) inherits ::ssh::params 
+ String $package_name,
+ String $service_name,
+ String $ensure,
+ Boolean $service_enable,
+ String $service_ensure,
+ Boolean $permit_root_login = false,
+ Integer $port              = 2222,
+) 
 {
-  class { '::ssh::install': } ->
+  class { '::ssh::install': } 
+  class { '::ssh::config': }
   class { '::ssh::service': } 
+
+Class['::ssh::install'] -> Class['::ssh::config'] ~> Class['::ssh::service']
 }
